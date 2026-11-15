@@ -1,0 +1,8 @@
+numpy
+scipy
+matplotlib
+# Step 2 (to be pinned once the training setup is fixed):
+# torch
+# transformers
+# trl
+# datasets
