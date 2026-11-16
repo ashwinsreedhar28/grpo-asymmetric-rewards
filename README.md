@@ -76,7 +76,7 @@ For each rule, the code computes the expected update to θ exactly. It does this
 Results, c = 5:
 
 - **Standard GRPO** has p* below 0.833 in every case. With G = 8 and π = 0.5, p* = 0.682. That is the same as a penalty of about −2.1 instead of −5. It is worst when the model rarely answers (p* = 0.528 at π = 0.05) and when groups are small (p* = 0.5 at G = 2).
-- **A larger penalty does not fix standard GRPO.** At G = 8 and π = 0.5, c = 1000 gives p* = 0.737, which acts like a penalty of about −2.8. After rescaling, no advantage in a group of G can exceed √(G − 1) in size (2.65 for G = 8), whatever c is.
+- **A larger penalty does not fix standard GRPO.** At G = 8 and π = 0.5, c = 1000 gives p* = 0.737, which acts like a penalty of about −2.8. After rescaling, no advantage in a group of G can exceed (G − 1)/√G in size (2.47 for G = 8, with TRL's Bessel-corrected std; √(G − 1) = 2.65 with plain std), whatever c is.
 - **Dr. GRPO, RLOO and fixed scale** give p* = c/(1 + c) exactly, for every c, G and π. They differ from each other only by a positive constant (1, G/(G − 1), 1/κ), which changes the step size and not the direction.
 - **Batch std** with B groups of size G has exactly the same threshold as standard GRPO with one group of size B·G. It approaches c/(1 + c) as the batch grows, but never reaches it.
 
